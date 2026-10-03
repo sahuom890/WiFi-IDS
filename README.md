@@ -1,12 +1,25 @@
 # 🛡️ Wi-Fi Intrusion Detection & Investigation System (Wi-Fi IDS)
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Render-46E3B7.svg?style=for-the-badge&logo=render&logoColor=white)](https://wifi-ids.onrender.com/)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-3776AB.svg?style=flat&logo=python&logoColor=white)](https://www.python.org/)
 [![Flask 3.0](https://img.shields.io/badge/Flask-3.0.0-000000.svg?style=flat&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
 [![Scapy 2.5](https://img.shields.io/badge/Scapy-2.5.0-EB212E.svg?style=flat)](https://scapy.net/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Render-46E3B7.svg?style=flat&logo=render&logoColor=white)](https://wifi-ids.onrender.com)
+
+> 🚀 **Live Demo:** **[https://wifi-ids.onrender.com/](https://wifi-ids.onrender.com/)**
 
 A modern, full-stack cybersecurity web application that performs **real-time 802.11 Wi-Fi frame inspection**, detects wireless attack signatures, logs forensic evidence into an **SQLite** database, and provides an interactive, terminal-styled **dark SOC dashboard**.
+
+---
+
+## 🌐 Live Application Links
+
+| Resource | Live Link |
+|---|---|
+| 🏠 **Landing Page** | [https://wifi-ids.onrender.com/](https://wifi-ids.onrender.com/) |
+| 📊 **Live IDS Dashboard** | [https://wifi-ids.onrender.com/dashboard](https://wifi-ids.onrender.com/dashboard) |
+| 📜 **Forensic Alert Logs** | [https://wifi-ids.onrender.com/logs](https://wifi-ids.onrender.com/logs) |
+| 📡 **Live Status API** | [https://wifi-ids.onrender.com/api/status](https://wifi-ids.onrender.com/api/status) |
 
 ---
 
@@ -73,18 +86,20 @@ WiFi-IDS/
 
 ## 🚀 Live Cloud Deployment
 
-You can host this project online for free in under 2 minutes:
+This project is currently deployed and hosted live on Render:
 
-### Option 1: Deploy on Render (Recommended)
+🔗 **[https://wifi-ids.onrender.com/](https://wifi-ids.onrender.com/)**
+
+### Deploying Your Own Instance on Render
 
 1. Fork or push this repository to your GitHub account: `sahuom890/WiFi-IDS`.
 2. Go to [Render Dashboard](https://dashboard.render.com/) and click **New +** → **Web Service**.
 3. Connect your **WiFi-IDS** repository.
-4. Render will auto-detect the configuration, or enter:
+4. Render will auto-detect the configuration:
    - **Environment:** `Python 3`
    - **Build Command:** `pip install -r requirements.txt`
    - **Start Command:** `gunicorn app:app`
-5. Click **Create Web Service**. Your live dashboard will be accessible globally via HTTPS!
+5. Click **Create Web Service**.
 
 ---
 
@@ -132,11 +147,11 @@ Open your browser and navigate to: **`http://127.0.0.1:5000`**
 
 ## 🕹️ Dashboard Preview & Pages
 
-| Page | URL | Description |
-|---|---|---|
-| 🏠 **Home** | `/` | System overview, core capabilities, animated radar |
-| 📊 **Dashboard** | `/dashboard` | Live packet analysis feed, Start/Stop toggle, realtime stats |
-| 📜 **Forensic Logs** | `/logs` | Complete alert history, search, filtering, CSV export |
+| Page | Local URL | Live Production URL | Description |
+|---|---|---|---|
+| 🏠 **Home** | `http://127.0.0.1:5000/` | [https://wifi-ids.onrender.com/](https://wifi-ids.onrender.com/) | System overview, animated radar |
+| 📊 **Dashboard** | `http://127.0.0.1:5000/dashboard` | [https://wifi-ids.onrender.com/dashboard](https://wifi-ids.onrender.com/dashboard) | Live packet feed & controls |
+| 📜 **Forensic Logs** | `http://127.0.0.1:5000/logs` | [https://wifi-ids.onrender.com/logs](https://wifi-ids.onrender.com/logs) | Full alert history & CSV export |
 
 ---
 
