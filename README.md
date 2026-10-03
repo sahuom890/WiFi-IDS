@@ -1,35 +1,35 @@
-# 🛡️ Wi-Fi Intrusion Detection & Investigation System (Wi-Fi IDS)
+﻿# ðŸ›¡ï¸ Wi-Fi Intrusion Detection & Investigation System (Wi-Fi IDS)
 
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-3776AB.svg?style=flat&logo=python&logoColor=white)](https://www.python.org/)
 [![Flask 3.0](https://img.shields.io/badge/Flask-3.0.0-000000.svg?style=flat&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
 [![Scapy 2.5](https://img.shields.io/badge/Scapy-2.5.0-EB212E.svg?style=flat)](https://scapy.net/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Render-46E3B7.svg?style=flat&logo=render&logoColor=white)](https://wifi-ids.onrender.com)
 
 A modern, full-stack cybersecurity web application that performs **real-time 802.11 Wi-Fi frame inspection**, detects wireless attack signatures, logs forensic evidence into an **SQLite** database, and provides an interactive, terminal-styled **dark SOC dashboard**.
 
 ---
 
-## 🌟 Key Highlights
+## ðŸŒŸ Key Highlights
 
-- ⚡ **Zero-Hardware Simulation Mode (Default):** Runs anywhere (Windows, macOS, Linux, and Cloud Web Hosts like Render, Railway, Vercel) without needing a specialized wireless adapter in monitor mode.
-- 📡 **Real-Time Packet Inspection:** Built with **Scapy** to sniff raw 802.11 frames on monitor-mode interfaces (`wlan0mon`).
-- 🚨 **Multi-Vector Attack Detection Engine:**
+- âš¡ **Zero-Hardware Simulation Mode (Default):** Runs anywhere (Windows, macOS, Linux, and Cloud Web Hosts like Render, Railway, Vercel) without needing a specialized wireless adapter in monitor mode.
+- ðŸ“¡ **Real-Time Packet Inspection:** Built with **Scapy** to sniff raw 802.11 frames on monitor-mode interfaces (`wlan0mon`).
+- ðŸš¨ **Multi-Vector Attack Detection Engine:**
   - **Deauthentication Floods (`Dot11Deauth`):** Detects DoS / disconnect attacks that force clients off the network.
   - **Rogue / Suspicious MAC Addresses:** Automatically identifies blocklisted / spoofed MAC prefixes.
   - **Brute-Force Authentication Floods:** Tracks authentication frame spikes across a sliding time window.
-- 📊 **Cyberpunk / SOC Web Interface:**
+- ðŸ“Š **Cyberpunk / SOC Web Interface:**
   - Live animated radar scanner and CRT scanline aesthetic.
   - Real-time auto-polling threat feed with color-coded severity badges.
   - Stat counters for Total Alerts, Deauth Attacks, Rogue MACs, and Auth Floods.
-- 🔎 **Forensic Log Investigation:**
+- ðŸ”Ž **Forensic Log Investigation:**
   - Searchable & filterable historical log viewer.
-  - 💾 **One-Click CSV Export** for forensic reporting and incident documentation.
+  - ðŸ’¾ **One-Click CSV Export** for forensic reporting and incident documentation.
   - Instant database wipe/reset capabilities.
 
 ---
 
-## 🏗️ System Architecture
+## ðŸ—ï¸ System Architecture
 
 ```mermaid
 graph TD
@@ -48,37 +48,37 @@ graph TD
 
 ---
 
-## 📁 Repository Structure
+## ðŸ“ Repository Structure
 
 ```
 WiFi-IDS/
-├── app.py                 # Core Flask application, Scapy sniffer & SQLite models
-├── requirements.txt       # Dependencies (Flask, Scapy, Gunicorn)
-├── Procfile               # Production WSGI process definition for cloud hosts
-├── render.yaml            # 1-Click Render blueprint configuration
-├── vercel.json            # Vercel serverless deployment definition
-├── .gitignore             # Git ignore file for DBs, virtual environments, caches
-├── README.md              # Project documentation
-├── templates/             # Jinja2 HTML Templates
-│   ├── base.html          # Shared layout & navigation bar
-│   ├── home.html          # Cyber-styled landing page & animated radar
-│   ├── dashboard.html     # Real-time monitoring & alert telemetry dashboard
-│   └── logs.html          # Forensic investigation & CSV export console
-└── static/                # Frontend assets
-    ├── style.css          # Cyberpunk dark theme styling & animations
-    └── main.js            # Live dashboard polling & dynamic DOM updates
+â”œâ”€â”€ app.py                 # Core Flask application, Scapy sniffer & SQLite models
+â”œâ”€â”€ requirements.txt       # Dependencies (Flask, Scapy, Gunicorn)
+â”œâ”€â”€ Procfile               # Production WSGI process definition for cloud hosts
+â”œâ”€â”€ render.yaml            # 1-Click Render blueprint configuration
+â”œâ”€â”€ vercel.json            # Vercel serverless deployment definition
+â”œâ”€â”€ .gitignore             # Git ignore file for DBs, virtual environments, caches
+â”œâ”€â”€ README.md              # Project documentation
+â”œâ”€â”€ templates/             # Jinja2 HTML Templates
+â”‚   â”œâ”€â”€ base.html          # Shared layout & navigation bar
+â”‚   â”œâ”€â”€ home.html          # Cyber-styled landing page & animated radar
+â”‚   â”œâ”€â”€ dashboard.html     # Real-time monitoring & alert telemetry dashboard
+â”‚   â””â”€â”€ logs.html          # Forensic investigation & CSV export console
+â””â”€â”€ static/                # Frontend assets
+    â”œâ”€â”€ style.css          # Cyberpunk dark theme styling & animations
+    â””â”€â”€ main.js            # Live dashboard polling & dynamic DOM updates
 ```
 
 ---
 
-## 🚀 Live Cloud Deployment
+## ðŸš€ Live Cloud Deployment
 
 You can host this project online for free in under 2 minutes:
 
 ### Option 1: Deploy on Render (Recommended)
 
 1. Fork or push this repository to your GitHub account: `sahuom890/WiFi-IDS`.
-2. Go to [Render Dashboard](https://dashboard.render.com/) and click **New +** → **Web Service**.
+2. Go to [Render Dashboard](https://dashboard.render.com/) and click **New +** â†’ **Web Service**.
 3. Connect your **WiFi-IDS** repository.
 4. Render will auto-detect the configuration, or enter:
    - **Environment:** `Python 3`
@@ -88,7 +88,7 @@ You can host this project online for free in under 2 minutes:
 
 ---
 
-## 💻 Local Setup & Installation
+## ðŸ’» Local Setup & Installation
 
 ### Prerequisites
 
@@ -130,17 +130,17 @@ Open your browser and navigate to: **`http://127.0.0.1:5000`**
 
 ---
 
-## 🕹️ Dashboard Preview & Pages
+## ðŸ•¹ï¸ Dashboard Preview & Pages
 
 | Page | URL | Description |
 |---|---|---|
-| 🏠 **Home** | `/` | System overview, core capabilities, animated radar |
-| 📊 **Dashboard** | `/dashboard` | Live packet analysis feed, Start/Stop toggle, realtime stats |
-| 📜 **Forensic Logs** | `/logs` | Complete alert history, search, filtering, CSV export |
+| ðŸ  **Home** | `/` | System overview, core capabilities, animated radar |
+| ðŸ“Š **Dashboard** | `/dashboard` | Live packet analysis feed, Start/Stop toggle, realtime stats |
+| ðŸ“œ **Forensic Logs** | `/logs` | Complete alert history, search, filtering, CSV export |
 
 ---
 
-## 📡 REST API Documentation
+## ðŸ“¡ REST API Documentation
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -153,7 +153,7 @@ Open your browser and navigate to: **`http://127.0.0.1:5000`**
 
 ---
 
-## ⚙️ Switching to Live Wi-Fi Hardware Sniffing
+## âš™ï¸ Switching to Live Wi-Fi Hardware Sniffing
 
 To capture real wireless packets from the air using a physical Wi-Fi card:
 
@@ -170,8 +170,9 @@ To capture real wireless packets from the air using a physical Wi-Fi card:
 
 ---
 
-## 📜 License & Academic Disclaimer
+## ðŸ“œ License & Academic Disclaimer
 
 Distributed under the **MIT License**.
 
-> ⚠️ **Educational Disclaimer:** This tool is intended for academic research, security demonstration, and authorized network auditing purposes only. Always obtain explicit permission before monitoring third-party wireless networks.
+> âš ï¸ **Educational Disclaimer:** This tool is intended for academic research, security demonstration, and authorized network auditing purposes only. Always obtain explicit permission before monitoring third-party wireless networks.
+
