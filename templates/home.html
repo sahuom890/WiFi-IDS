@@ -1,0 +1,73 @@
+<!--
+  home.html — Landing page for the Wi-Fi IDS application.
+  Features project description, highlights, and CTA to dashboard.
+-->
+{% extends "base.html" %}
+{% block title %}Wi-Fi IDS — Home{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-badge">&#128274; NETWORK SECURITY</div>
+        <h1 class="glitch" data-text="Wi-Fi Intrusion Detection">Wi-Fi Intrusion Detection</h1>
+        <h2 class="hero-sub">&amp; Investigation System</h2>
+        <p class="hero-desc">
+            Real-time Wi-Fi packet analysis powered by <strong>Scapy</strong>. Detect deauthentication
+            attacks, suspicious MAC addresses, and brute-force attempts — all logged and
+            displayed on a live forensic dashboard.
+        </p>
+        <a href="/dashboard" class="btn btn-primary pulse-glow">Open Dashboard &rarr;</a>
+    </div>
+    <div class="hero-graphic">
+        <!-- Animated radar / scanning ring -->
+        <div class="radar-container">
+            <div class="radar-ring ring-1"></div>
+            <div class="radar-ring ring-2"></div>
+            <div class="radar-ring ring-3"></div>
+            <div class="radar-dot"></div>
+            <div class="radar-sweep"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Feature Cards ===== -->
+<section class="features">
+    <h2 class="section-title"><span class="accent">//</span> Core Capabilities</h2>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <div class="feature-icon">&#128225;</div>
+            <h3>Packet Capture</h3>
+            <p>Sniff 802.11 Wi-Fi frames in real time using Scapy with monitor-mode support.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">&#9888;&#65039;</div>
+            <h3>Attack Detection</h3>
+            <p>Identify deauth floods, rogue MACs, and brute-force authentication attempts automatically.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">&#128451;</div>
+            <h3>SQLite Logging</h3>
+            <p>Every alert is persisted with timestamp, source MAC, and attack type for forensic review.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">&#128200;</div>
+            <h3>Live Dashboard</h3>
+            <p>Monitor threats as they happen with a real-time, auto-refreshing alert feed.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Tech Stack ===== -->
+<section class="tech-stack">
+    <h2 class="section-title"><span class="accent">//</span> Technology Stack</h2>
+    <div class="tech-pills">
+        <span class="pill">Python</span>
+        <span class="pill">Flask</span>
+        <span class="pill">Scapy</span>
+        <span class="pill">SQLite</span>
+        <span class="pill">HTML5</span>
+        <span class="pill">CSS3</span>
+        <span class="pill">JavaScript</span>
+    </div>
+</section>
+{% endblock %}

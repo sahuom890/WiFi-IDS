@@ -1,0 +1,78 @@
+<!--
+  dashboard.html — Live monitoring dashboard.
+  Start/Stop buttons, status indicator, and real-time alert feed.
+-->
+{% extends "base.html" %}
+{% block title %}Wi-Fi IDS — Dashboard{% endblock %}
+
+{% block content %}
+<section class="dashboard">
+    <h1 class="page-title"><span class="accent">&gt;_</span> Monitoring Dashboard</h1>
+
+    <!-- ===== Control Panel ===== -->
+    <div class="control-panel">
+        <div class="control-group">
+            <button id="btn-start" class="btn btn-start" onclick="startMonitoring()">
+                &#9654; Start Monitoring
+            </button>
+            <button id="btn-stop" class="btn btn-stop" disabled onclick="stopMonitoring()">
+                &#9724; Stop Monitoring
+            </button>
+        </div>
+        <div class="status-panel">
+            <div class="status-label">System Status</div>
+            <div class="status-badge" id="status-badge">
+                <span class="status-dot offline" id="status-dot"></span>
+                <span id="status-text">Stopped</span>
+            </div>
+            <div class="mode-badge" id="mode-badge">Mode: —</div>
+        </div>
+    </div>
+
+    <!-- ===== Stats Overview ===== -->
+    <div class="stats-row">
+        <div class="stat-card">
+            <div class="stat-number" id="stat-total">0</div>
+            <div class="stat-label">Total Alerts</div>
+        </div>
+        <div class="stat-card deauth">
+            <div class="stat-number" id="stat-deauth">0</div>
+            <div class="stat-label">Deauth Attacks</div>
+        </div>
+        <div class="stat-card suspicious">
+            <div class="stat-number" id="stat-suspicious">0</div>
+            <div class="stat-label">Suspicious MACs</div>
+        </div>
+        <div class="stat-card bruteforce">
+            <div class="stat-number" id="stat-brute">0</div>
+            <div class="stat-label">Brute-Force</div>
+        </div>
+    </div>
+
+    <!-- ===== Live Alerts Feed ===== -->
+    <div class="alerts-section">
+        <div class="alerts-header">
+            <h2><span class="accent blink">&#9679;</span> Live Alert Feed</h2>
+            <button class="btn btn-sm btn-clear" onclick="clearAlerts()">Clear All</button>
+        </div>
+        <div class="alerts-table-wrap">
+            <table class="alerts-table" id="alerts-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Timestamp</th>
+                        <th>Source MAC</th>
+                        <th>Attack Type</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody id="alerts-body">
+                    <tr class="empty-row">
+                        <td colspan="5">No alerts yet — start monitoring to begin packet analysis.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+{% endblock %}

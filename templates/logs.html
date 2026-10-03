@@ -1,0 +1,57 @@
+<!--
+  logs.html — Historical alert logs with search/filter.
+-->
+{% extends "base.html" %}
+{% block title %}Wi-Fi IDS — Logs{% endblock %}
+
+{% block content %}
+<section class="logs-page">
+    <h1 class="page-title"><span class="accent">&gt;_</span> Alert Logs</h1>
+
+    <!-- ===== Toolbar ===== -->
+    <div class="logs-toolbar">
+        <div class="search-box">
+            <input type="text" id="log-search" placeholder="&#128269; Search by MAC, type, or detail..."
+                oninput="filterLogs()">
+        </div>
+        <div class="filter-group">
+            <select id="log-filter" onchange="filterLogs()">
+                <option value="all">All Types</option>
+                <option value="Deauthentication Attack">Deauthentication</option>
+                <option value="Suspicious MAC Address">Suspicious MAC</option>
+                <option value="Brute-Force Attempt">Brute-Force</option>
+            </select>
+            <button class="btn btn-sm btn-export" onclick="exportCSV()">&#128190; Export CSV</button>
+        </div>
+    </div>
+
+    <!-- ===== Logs Table ===== -->
+    <div class="alerts-table-wrap">
+        <table class="alerts-table" id="logs-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Timestamp</th>
+                    <th>Source MAC</th>
+                    <th>Attack Type</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody id="logs-body">
+                <tr class="empty-row">
+                    <td colspan="5">Loading logs…</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="log-count" id="log-count"></div>
+</section>
+
+{% block scripts %}
+<script>
+    // Fetch all logs on page load
+    document.addEventListener("DOMContentLoaded", fetchAllLogs);
+</script>
+{% endblock %}
+{% endblock %}
